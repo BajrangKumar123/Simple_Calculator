@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="/calci.css">
+</head>
+
+<body>
+    <div class="exa2">
+        <h1><strong>Simple Calculator</strong></h1><br>
+        <div class="calci">
+            <table>
+                <tr>
+                    <td colspan="3"><input type="text" id="result" class="screen"></td>
+                    <td><input type="button" value="Clear" onclick="clearScreen()" class="clear"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="display('1')" class="number"></td>
+                    <td><input type="button" value="2" onclick="display('2')" class="number"></td>
+                    <td><input type="button" value="3" onclick="display('3')" class="number"></td>
+                    <td><input type="button" value="/" onclick="display('/')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="display('4')" class="number"></td>
+                    <td><input type="button" value="5" onclick="display('5')" class="number"></td>
+                    <td><input type="button" value="6" onclick="display('6')" class="number"></td>
+                    <td><input type="button" value="-" onclick="display('-')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="display('7')" class="number"></td>
+                    <td><input type="button" value="8" onclick="display('8')" class="number"></td>
+                    <td><input type="button" value="9" onclick="display('9')" class="number"></td>
+                    <td><input type="button" value="+" onclick="display('+')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="." onclick="display('.')" class="decimal"></td>
+                    <td><input type="button" value="0" onclick="display('0')" class="number"></td>
+                    <td><input type="button" value="=" onclick="solve()" class="equal"></td>
+                    <td><input type="button" value="*" onclick="display('*')" class="operator"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    function display(val) {
+        document.getElementById("result").value += val;
+    }
+
+    function solve(val) {
+        let x = document.getElementById("result").value;
+        let y = eval(x);
+
+        document.getElementById("result").value = y;
+    }
+
+    function clearScreen(val) {
+        document.getElementById("result").value = '';
+    }
+
+
+
+    // let result;
+    // const numb1 = Number(document.getElementById("num1").value);
+    // const opt = document.getElementById("opr").value;
+    // const numb2 = Number(document.getElementById("num2").value);
+    // const val = eval(numb1, opt, numb2);
+
+    // // const number1 = parseFloat(prompt('Enter first number: '));
+    // // const operator = prompt('Enter operator ( either +, -, * or / ): ');
+    // // const number2 = parseFloat(prompt('Enter second number: '));
+
+    // switch (operator) {
+    //     case 1:
+    //         result = number1 + number2;
+    //         console.log(`${number1} + ${number2} = ${result}`);
+    //         break;
+
+    //     case 2:
+    //         result = number1 - number2;
+    //         console.log(`${number1} - ${number2} = ${result}`);
+    //         break;
+
+    //     case 3:
+    //         result = number1 * number2;
+    //         console.log(`${number1} * ${number2} = ${result}`);
+    //         break;
+
+    //     case 4:
+    //         result = number1 / number2;
+    //         console.log(`${number1} / ${number2} = ${result}`);
+    //         break;
+
+    //     default:
+    //         console.log('Invalid operator');
+    //         break;
+    // }
+</script>
+
+</html>
